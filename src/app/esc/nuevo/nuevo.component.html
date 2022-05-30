@@ -1,0 +1,66 @@
+<app-menu></app-menu>
+
+<div class="container">
+    <div class="row mt-5">
+        <div class="col-md-4 mx-auto">
+            <form (ngSubmit)="validation()" novalidate #f="ngForm">
+                <div class="form-group">
+                    <label for="nombre">Nombre</label>
+                    <input type="text" class="form-control" id="nombre" name="nombre"
+                    [(ngModel)]="nombre" pattern="[a-zA-Z ]{2,254}" required>
+                    <small class="text-danger" *ngIf="vn">Rellene el campo correctamente</small>
+                </div>
+                <div class="form-group">
+                    <label for="app">Apellido paterno</label>
+                    <input type="text" class="form-control" id="app" name="app"
+                    [(ngModel)]="app" pattern="[a-zA-Z ]{2,254}" required>
+                    <small class="text-danger" *ngIf="ap">Rellene el campo correctamente</small>
+                </div>
+                <div class="form-group">
+                    <label for="apm">Apellido materno</label>
+                    <input type="text" class="form-control" id="apm" name="apm"
+                    [(ngModel)]="apm" pattern="[a-zA-Z ]{2,254}" required>
+                    <small class="text-danger" *ngIf="am">Rellene el campo correctamente</small>
+                </div>
+                <div class="form-group">
+                    <label for="fechanac">Fecha de nacimiento</label>
+                    <input type="date" class="form-control" id="fechanac" name="fechanac"
+                    [(ngModel)]="fechanac" required>
+                    <small class="text-danger" *ngIf="fn">Seleccione una fecha</small>
+                </div>
+                <div class="form-group">
+                    <label for="sexo">Sexo</label>
+                    <select class="form-control" name="sexo" id="sexo" [(ngModel)]="sexo" required>
+                        <option value="" disabled>Seleccione</option>
+                        <option value="Hombre">Hombre</option>
+                        <option value="Mujer">Mujer</option>
+                    </select>
+                    <small class="text-danger" *ngIf="sn">Seleccione una opción</small>
+                </div>
+                <div class="form-group">
+                    <label for="grado">Grado</label>
+                    <select class="form-control" name="grado" id="grado" [(ngModel)]="grado" required>
+                        <option value="" disabled>Seleccione</option>
+                        <option value="Preparatoria">Preparatoria</option>
+                        <option value="Universidad">Universidad</option>
+                        <option value="Maestria">Maestria</option>
+                    </select>
+                    <small class="text-danger" *ngIf="gn">Seleccione una opción</small>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" class="form-control" id="email" name="email"
+                    [(ngModel)]="email" required>
+                    <small class="text-danger" *ngIf="emn">Rellene el campo correctamente</small>
+                </div>
+                <div class="form-group">
+                    <label for="tel">Telefono</label>
+                    <input type="number" class="form-control" id="tel" name="tel"
+                    [(ngModel)]="tel" required>
+                    <small class="text-danger" *ngIf="tn">Rellene el campo correctamente</small>
+                </div>
+                <button class="btn btn-outline-success btn-block" [disabled]="!f.valid">Crear</button>
+            </form>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,23 @@
+<app-menu></app-menu>
+
+<div class="container">
+  <div class="row" >
+    <div class="col-md-3" *ngFor="let esx of Escs" style="margin-top: 20px; margin-bottom: 10px;">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">{{esx.id}}.-{{esx.nom}} {{esx.app}} {{esx.apm}}</h5>
+          <p class="card-text">Nació el {{esx.fechanac | date:"dd/MM/yyyy"}}</p>
+        </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">Sexo: {{esx.sexo}}</li>
+          <li class="list-group-item">Grado de estudio: {{esx.grado}}</li>
+          <li class="list-group-item">Email: {{esx.email}}</li>
+          <li class="list-group-item">Tel: {{esx.tel}}</li>
+        </ul>
+        <div class="card-body">
+          <button class="btn btn-outline-danger" (click)="borrar(esx.id)"><i class="far fa-trash-alt"></i> Eliminar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

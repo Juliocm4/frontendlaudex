@@ -1,0 +1,5 @@
+Para utilizar este repositorio es necesario haber descargado el backend primero.
+Las instrucciones para esta parte son faciles.
+1.- Descargas el respositorio
+2.- Instalas las dependencias con "npm i"
+3.- Corres el programa "npm start"
